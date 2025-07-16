@@ -9,9 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import mber.suitmedia.myapplication.ui.theme.MyApplicationTheme
 import mber.suitmedia.myapplication.ui.theme.OrangeGradientBrush
 import mber.suitmedia.myapplication.ui.theme.OrangeGradientHorizontalBrush
 import mber.suitmedia.myapplication.utils.PalindromeChecker
@@ -176,6 +179,17 @@ fun FirstScreen(
                 }
             },
             shape = RoundedCornerShape(16.dp)
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun FirstScreenPreview() {
+    MyApplicationTheme {
+        FirstScreen(
+            navController = rememberNavController(),
+            onNameChange = { }
         )
     }
 }

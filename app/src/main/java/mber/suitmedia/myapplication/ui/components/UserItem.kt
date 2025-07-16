@@ -13,11 +13,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import mber.suitmedia.myapplication.data.User
+import mber.suitmedia.myapplication.ui.theme.MyApplicationTheme
 import mber.suitmedia.myapplication.ui.theme.OrangeGradientBrush
 
 @Composable
@@ -81,6 +83,45 @@ fun UserItem(
                     color = Color(0xFF666666)
                 )
             }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UserItemListPreview() {
+    MyApplicationTheme {
+        Column {
+            UserItem(
+                user = User(
+                    id = 1,
+                    email = "john.doe@example.com",
+                    first_name = "John",
+                    last_name = "Doe",
+                    avatar = "https://reqres.in/img/faces/1-image.jpg"
+                ),
+                onClick = { }
+            )
+            UserItem(
+                user = User(
+                    id = 2,
+                    email = "jane.smith@example.com",
+                    first_name = "Jane",
+                    last_name = "Smith",
+                    avatar = "https://reqres.in/img/faces/2-image.jpg"
+                ),
+                onClick = { }
+            )
+            UserItem(
+                user = User(
+                    id = 3,
+                    email = "mike.johnson@example.com",
+                    first_name = "Mike",
+                    last_name = "Johnson",
+                    avatar = "https://reqres.in/img/faces/3-image.jpg"
+                ),
+                onClick = { }
+            )
         }
     }
 }

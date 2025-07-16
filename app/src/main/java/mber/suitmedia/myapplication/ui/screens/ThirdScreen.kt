@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -23,6 +24,7 @@ import kotlinx.coroutines.launch
 import mber.suitmedia.myapplication.data.User
 import mber.suitmedia.myapplication.network.ApiClient
 import mber.suitmedia.myapplication.ui.components.UserItem
+import mber.suitmedia.myapplication.ui.theme.MyApplicationTheme
 import mber.suitmedia.myapplication.ui.theme.OrangeGradientBrush
 import mber.suitmedia.myapplication.ui.theme.OrangeGradientHorizontalBrush
 
@@ -218,5 +220,22 @@ fun ThirdScreen(
         LaunchedEffect(Unit) {
             delay(100)
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun UserItemPreview() {
+    MyApplicationTheme {
+        UserItem(
+            user = User(
+                id = 1,
+                email = "john.doe@example.com",
+                first_name = "John",
+                last_name = "Doe",
+                avatar = "https://reqres.in/img/faces/1-image.jpg"
+            ),
+            onClick = { }
+        )
     }
 }
